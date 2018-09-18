@@ -7,7 +7,7 @@ export default {
   },
   output: {
     path: path.resolve('dist'),
-    filename: 'webpack-[name].js'
+    filename: 'bundle.js'
   },
   resolve: {
     alias: {
