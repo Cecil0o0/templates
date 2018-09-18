@@ -4,6 +4,18 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script type="text/javascript">
+    ;(function () {
+      if (!/debug=true/.test(window.location.href)) return;
+      var oHead = document.head;
+      var oScript = document.createElement('script');
+      oScript.type = "text/javascript";
+            oScript.crossOrigin="anonymous";
+          oScript.src = "//cdn.jsdelivr.net/npm/eruda@1.5.3/eruda.min.js";
+      oHead.appendChild(oScript);
+      oScript.onload = function () { eruda.init() }
+    })();
+  </script>
   <title>Test</title>
 </head>
 <body>
