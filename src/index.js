@@ -1,10 +1,16 @@
-const puppeteer = require('puppeteer')
+const Koa = require('koa')
+const router = require('./controller')
+const middlewares = require('./middlewares')
+const { port } = require('../config')
 
-;(async () => {
-  const browser = await puppeteer.launch()
-  const page = await browser.newPage()
-  await page.goto('https://www.baidu.com')
-  await page.screenshot({ path: __dirname + '/../dist/example.png' })
+const app = new Koa()
 
-  await browser.close()
-})()
+// 挂载中间件
+middlewares.mount(app)
+
+// 挂载路由
+router.mount(app)
+
+app.listen(port, () => {
+  console.log('server is listening at port ' + port)
+})
