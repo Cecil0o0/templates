@@ -4,6 +4,10 @@ function getCards() {
   return db.get('cards')
 }
 
+function getCard(id) {
+  return db.get('cards').find({ id }).value()
+}
+
 function addCard(card) {
   if (!card) return
   return db.get('cards').insert(card).write()
@@ -21,6 +25,7 @@ function updateCard(card) {
 
 module.exports = {
   getCards,
+  getCard,
   addCard,
   removeCard,
   updateCard

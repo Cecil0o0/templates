@@ -9,6 +9,12 @@ module.exports = {
       next()
     })
 
+    router.get('/card/:id', async(ctx, next) => {
+      const { id } = ctx.params
+      ctx.body = await CardService.getCard(id)
+      next()
+    })
+
     router.post('/card', async (ctx, next) => {
       const card = ctx.request.body
       let res = await CardService.addCard(card)
