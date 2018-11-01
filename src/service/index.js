@@ -1,5 +1,4 @@
-const CardService = require('./card')
-
 module.exports = {
-  CardService
+  CardService: require('./card'),
+  UploadService: require('./upload')
 }

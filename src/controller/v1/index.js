@@ -1,9 +1,9 @@
 const KoaRouter = require('koa-router')
-const CardController = require('./card')
-const v1Router = new KoaRouter({
+const v1 = new KoaRouter({
   prefix: '/v1'
 })
 
-CardController.mount(v1Router)
+require('./card').mount(v1)
+require('./upload').mount(v1)
 
-module.exports = v1Router
+module.exports = v1

@@ -3,7 +3,7 @@ module.exports = () => {
     try {
       await next()
     } catch(e) {
-      console.error(e)
+      console.log(e)
     }
   }
 }
