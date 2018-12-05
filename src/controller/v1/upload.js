@@ -1,4 +1,4 @@
-const { UploadService } = require('../../service')
+const { UploadDAO } = require('../../dao')
 
 module.exports = {
   mount(router) {
@@ -7,7 +7,7 @@ module.exports = {
       const { id } = ctx.params
       const file = ctx.request.files.file
       try {
-        let data = await UploadService.uploadFileById(id, file)
+        let data = await UploadDAO.uploadFileById(id, file)
         ctx.body = ctx.returnWrapper({ data })
       } catch (e) {
         console.log(e)

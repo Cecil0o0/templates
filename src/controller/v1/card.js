@@ -1,36 +1,36 @@
-const services = require('../../service')
+const DAOs = require('../../dao')
 
-const { CardService } = services
+const { CardDAO } = DAOs
 
 module.exports = {
   mount(router) {
     router.get('/cards', async(ctx, next) => {
-      ctx.body = CardService.getCards()
+      ctx.body = CardDAO.getCards()
       next()
     })
 
     router.get('/card/:id', async(ctx, next) => {
       const { id } = ctx.params
-      ctx.body = await CardService.getCard(id)
+      ctx.body = await CardDAO.getCard(id)
       next()
     })
 
     router.post('/card', async (ctx, next) => {
       const card = ctx.request.body
-      let res = await CardService.addCard(card)
+      let res = await CardDAO.addCard(card)
       ctx.body = res
       next()
     })
 
     router.delete('/card/:id', async(ctx, next) => {
       const { id } = ctx.params
-      ctx.body = await CardService.removeCard(id)
+      ctx.body = await CardDAO.removeCard(id)
       next()
     })
 
     router.put('/card', async(ctx, next) => {
       const card = ctx.request.body
-      ctx.body = await CardService.updateCard(card)
+      ctx.body = await CardDAO.updateCard(card)
       next()
     })
   }
