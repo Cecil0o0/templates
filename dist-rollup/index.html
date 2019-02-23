@@ -6,20 +6,21 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <script type="text/javascript">
     ;(function () {
-      if (!/debug=true/.test(window.location.href)) return;
       var oHead = document.head;
       var oScript = document.createElement('script');
       oScript.type = "text/javascript";
             oScript.crossOrigin="anonymous";
-          oScript.src = "//cdn.bootcss.com/eruda/1.4.4/eruda.min.js";
+          oScript.src = "//cdn.bootcss.com/eruda/1.5.4/eruda.min.js";
       oHead.appendChild(oScript);
       oScript.onload = function () { eruda.init() }
+      // 如果需要添加插件，请遵循官网教程引入
+      // https://github.com/liriliri/eruda
     })();
   </script>
   <title>Test</title>
 </head>
 <body>
   <div id="app"></div>
-  <script src="./bundle.js"></script>
+  <script src="rollup-bundle.umd.js"></script>
 </body>
 </html>

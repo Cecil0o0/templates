@@ -1,11 +1,14 @@
 {
   "presets": [
-    ["env", {
-      "modules": "commonjs",
-      "target": [
-        "last 2 versions"
-      ]
-    }],
-    "stage-2"
+    [
+      "@babel/env",
+      {
+        "modules": false
+      }
+    ]
+  ],
+  "plugins": [
+    "@babel/plugin-syntax-dynamic-import",
+    ["@babel/plugin-proposal-decorators", { "legacy": true }]
   ]
 }
