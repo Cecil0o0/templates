@@ -7,9 +7,8 @@ module.exports = {
     first: path.resolve('./src/index.js')
   },
   output: {
-    path: path.resolve('dist'),
-    filename: 'webpack-bundle.js',
-    publicPath: 'dist-webpack'
+    path: path.resolve('dist-webpack'),
+    filename: '[name]-webpack-bundle.js'
   },
   resolve: {
     alias: {
@@ -32,8 +31,8 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: 'dist-webpack/index.html',
-      filename: 'index-webpack.html',
+      template: 'dist-webpack/template.html',
+      filename: 'index.html',
       inject: true,
       chunks: ['first']
     })

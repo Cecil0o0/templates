@@ -6,5 +6,5 @@ dist-rollup/*
 !dist-rollup/index.html
 !dist-rollup/favicon.ico
 dist-webpack/*
-!dist-webpack/index.html
+!dist-webpack/template.html
 !dist-webpack/favicon.ico
