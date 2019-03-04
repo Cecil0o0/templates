@@ -22,7 +22,7 @@ export default [
         contentBase: ['dist-rollup'],
         host: getIPAddress()
       }),
-      !production && liveReload('dist'),
+      !production && liveReload('dist-rollup'),
       json(),
       resolve(),
       commonjs(),
