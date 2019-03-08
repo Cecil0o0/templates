@@ -8,3 +8,4 @@ dist-rollup/*
 dist-webpack/*
 !dist-webpack/template.html
 !dist-webpack/favicon.ico
+package-lock.json
